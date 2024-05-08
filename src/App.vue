@@ -5,7 +5,7 @@ import {store} from "./store.js"
 
 import AppHeader from "./components/AppHeader.vue";
 import SearchBar from "./components/SearchBar.vue";
-import AppMain from "./components/AppMain.vue"
+import AppMain from "./components/AppMain.vue";
 
 export default{
   components: {
@@ -29,11 +29,13 @@ export default{
         .get ("https://api.themoviedb.org/3/search/movie",{
           params: {
             api_key: this.store.apiKey,
-            query: "ciao"
+            query: this.store.searchQuery,
           },
         })
         .then((resp) =>{
-          console.log(resp);
+          // console.log(resp);
+          this.store.moviesArray = resp.data.results;
+          console.log(this.store.moviesArray);
         });
     }
   }
@@ -47,6 +49,7 @@ export default{
   />
   <AppMain 
   />
+
 </template>
 
 <style scoped lang="scss">
