@@ -11,7 +11,7 @@ export default {
 <template>
     <div>
         <input type="text">
-        <button>Cerca</button>
+        <button @click = "$emit ('filter')">Cerca</button>
     </div>
 </template>
 
