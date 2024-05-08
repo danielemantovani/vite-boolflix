@@ -1,10 +1,12 @@
 <script>
 
-import AppHeader from "./components/AppHeader.vue"
+import AppHeader from "./components/AppHeader.vue";
+import SearchBar from "./components/SearchBar.vue";
 
 export default{
   components: {
     AppHeader,
+    SearchBar,
   },
   data(){
     return{
@@ -16,6 +18,7 @@ export default{
 
 <template>
   <AppHeader />
+  <SearchBar />
 </template>
 
 <style scoped lang="scss">

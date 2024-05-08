@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-    <h1>Daje</h1>
+    <h1>Boolflix</h1>
 </template>
 
 <style scoped lang="scss"></style>
