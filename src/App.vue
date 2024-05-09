@@ -35,7 +35,7 @@ export default{
           this.store.moviesArray = resp.data.results;
           console.log(this.store.moviesArray);
         });
-    }
+    },
   }
 }
 </script>
