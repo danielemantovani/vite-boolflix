@@ -12,13 +12,15 @@ export default {
 </script>
 
 <template>
-    <div class="container, d-flex">
-        <div class="justify-content-between">
-            <h1>Boolflix</h1>
-        </div>
-        <div>
-            <input type="text" v-model="store.searchQuery">
-            <button @click = "$emit ('filter')">Cerca</button>
+    <div class="container">
+        <div class="d-flex justify-content-between p-2">
+            <div>
+                <h1>Boolflix</h1>
+            </div>
+            <div class="align-self-center">
+                <input type="text" v-model="store.searchQuery" @keyup= "$emit ('filter')">
+                <button @click = "$emit ('filter')">Cerca</button>
+            </div>
         </div>
     </div>
 </template>
