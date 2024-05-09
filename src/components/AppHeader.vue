@@ -18,7 +18,7 @@ export default {
                 <h1>Boolflix</h1>
             </div>
             <div class="align-self-center">
-                <input type="text" v-model="store.searchQuery" @keyup= "$emit ('filter')">
+                <input type="text" v-model="store.searchQuery" @keyup.enter= "$emit ('filter')">
                 <button @click = "$emit ('filter')">Cerca</button>
             </div>
         </div>

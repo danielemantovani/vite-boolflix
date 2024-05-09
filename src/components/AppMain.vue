@@ -1,5 +1,7 @@
 <script>
 
+import {store} from "../store.js"
+
 import Card from './Card.vue';
 
 export default {
@@ -8,15 +10,15 @@ export default {
     },
     data() {
         return {
-
+            store,
         }
     }
 }
 </script>
 
 <template>
-    <div class="container">
-        
+    <div class="container" v-for="film in store.moviesArray">
+        <Card :cardObj="film" />
     </div>
 </template>
 
