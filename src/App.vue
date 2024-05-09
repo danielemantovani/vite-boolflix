@@ -4,13 +4,11 @@ import axios from "axios"
 import {store} from "./store.js"
 
 import AppHeader from "./components/AppHeader.vue";
-import SearchBar from "./components/SearchBar.vue";
 import AppMain from "./components/AppMain.vue";
 
 export default{
   components: {
     AppHeader,
-    SearchBar,
     AppMain,
 
   },
@@ -43,9 +41,8 @@ export default{
 </script>
 
 <template>
-  <AppHeader />
-  <SearchBar 
-  @filter="showMovie"
+  <AppHeader 
+    @filter="showMovie"
   />
   <AppMain 
   />
