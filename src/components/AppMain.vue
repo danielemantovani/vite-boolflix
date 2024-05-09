@@ -17,7 +17,7 @@ export default {
 </script>
 
 <template>
-    <div class="container" v-for="film in store.moviesArray">
+    <div class="container" v-for="film in store.moviesArray"> 
         <Card :cardObj="film" />
     </div>
 </template>
