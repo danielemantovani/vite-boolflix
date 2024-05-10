@@ -48,7 +48,7 @@ export default {
             <p v-else>{{ cardObj.original_language }}</p>
             <p>{{ cardObj.vote_average }}</p>
             <!-- stelle -->
-            <i class="fa-star" v-for="star in stars" :class="{
+            <i class="fa-star" v-for="star in 5" :class="{
                 fas: star <= Math.ceil(cardObj.vote_average / 2),
                 far: star > Math.ceil(cardObj.vote_average / 2),
             }"></i>
