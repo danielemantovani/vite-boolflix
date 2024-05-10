@@ -17,9 +17,18 @@ export default {
 </script>
 
 <template>
-    <div class="container" v-for="film in store.moviesArray"> 
-        <Card :cardObj="film" />
-    </div>
+    <section>
+        <h2>Film</h2>
+        <div class="container" v-for="film in store.moviesArray"> 
+            <Card :cardObj="film" />
+        </div>
+    </section>
+    <section>
+        <h2>Serie TV</h2>
+        <div v-for="tv in store.tvArray">
+            <Card :cardObj ="tv"/>
+        </div>
+    </section>
 </template>
 
 <style scoped lang="scss"></style> 

@@ -20,8 +20,6 @@ export default {
             } else{
                 return false
             }
-            
-            
         }
     }
 };
@@ -30,12 +28,21 @@ export default {
 <template>
     <div class="card">
         <div class="card-body text-center">
-            <h3>{{ cardObj.title }}</h3>
-            <h6>{{ cardObj.original_title }}</h6>
-            <img v-if="getflags()"
+            <img  :src="`https://image.tmdb.org/t/p/w342/${cardObj.poster_path}`" :alt=(cardObj.title)>
+            <!-- titolo film -->
+            <h3 v-if="cardObj.title">{{ cardObj.title }}</h3>
+            <!-- titolo serie tv -->
+            <h3 v-else="cardObj.name">{{ cardObj.name }}</h3>
+            <!-- titolo originale film -->
+            <h6 v-if="cardObj.original_title">{{ cardObj.original_title }}</h6>
+            <!-- titolo originale serie tv -->
+            <h6 v-else="cardObj.original_name">{{ cardObj.original_name }}</h6>
+            <!-- mostra l'icona della bandiera in base alla lingua se la bandiera è presente nell'array e quindi c'è l'immagine corrispondente -->
+            <img class="flag" v-if="getflags()"
             :src="getImageUrl(cardObj.original_language)" 
             :alt= "(cardObj.original_language)"
             >
+            <!-- altrimenti stampa la lingua in lettere -->
             <p v-else>{{ cardObj.original_language }}</p>
             <p>{{ cardObj.vote_average }}</p>
         </div>
@@ -44,7 +51,7 @@ export default {
 
 <style scoped lang="scss">
     .card{
-        img{
+        .flag{
             width: 30px;
             height: 20px;
         }
