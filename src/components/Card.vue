@@ -5,7 +5,7 @@ export default {
     },
     data() {
         return {
-
+            flagArray: ["en", "es", "fr", "it", "ja", "pt"],
         }
     },
     methods:{
@@ -13,7 +13,16 @@ export default {
         getImageUrl(name){
             return new URL ('../assets/img/' + name + '.png', import.meta.url).href; //concatenazione
             // return new URL (`../assets/img/${name}.png`, import.meta.url).href; template literals
-        }   
+        },
+        getflags (){
+            if (this.flagArray.includes (this.cardObj.original_language)){
+                return true
+            } else{
+                return false
+            }
+            
+            
+        }
     }
 };
 </script>
@@ -23,10 +32,11 @@ export default {
         <div class="card-body text-center">
             <h3>{{ cardObj.title }}</h3>
             <h6>{{ cardObj.original_title }}</h6>
-            <img 
+            <img v-if="getflags()"
             :src="getImageUrl(cardObj.original_language)" 
             :alt= "(cardObj.original_language)"
             >
+            <p v-else>{{ cardObj.original_language }}</p>
             <p>{{ cardObj.vote_average }}</p>
         </div>
     </div>
