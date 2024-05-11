@@ -35,9 +35,9 @@ export default {
 </script>
 
 <template>
-    <div class="card">
-        <div class="card-body text-center">
-            <img :src="`https://image.tmdb.org/t/p/w342/${cardObj.poster_path}`" :alt=(cardObj.title)>
+    <div class="card" style="width: 18rem;">
+        <img :src="`https://image.tmdb.org/t/p/w342/${cardObj.poster_path}`" :alt=(cardObj.title)>
+        <div class="card-body">
             <!-- <h3>{{ cardObj.title ? cardObj.title : cardObj.name }}</h3> -->
             <h3>{{ cardTitle }}</h3>
             <h6>{{ cardOriginalTitle }}</h6>

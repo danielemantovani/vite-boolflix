@@ -81,6 +81,8 @@ export default {
           console.log(this.store.tvArray);
         });
     },
+
+
   }
 }
 </script>

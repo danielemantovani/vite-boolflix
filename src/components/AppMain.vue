@@ -12,24 +12,28 @@ export default {
         return {
             store,
         }
+    },
+    methods:{
     }
 }
 </script>
 
 <template>
-    <section>
-        <h2>Film</h2>
-        <div class="container" v-for="film in store.moviesArray"> 
-            <Card :cardObj="film" />
-        </div>
-    </section>
-    <section>
-        <h2>Serie TV</h2>
-        <div v-for="tv in store.tvArray">
-            <Card :cardObj ="tv"/>
-        </div>
-    </section>
+    <div class="bg-dark">
+        <section class="movies row">
+            <div class="container col g-3 p-5" v-for="film in store.moviesArray"> 
+                <Card :cardObj="film" />
+            </div>
+        </section>
+        <section class="tv-series row">
+            <div class="container col g-3 p-5" v-for="tv in store.tvArray">
+                <Card :cardObj ="tv"/>
+            </div>
+        </section>
+    </div>
 </template>
 
-<style scoped lang="scss"></style> 
+<style scoped lang="scss">
+
+</style> 
 
