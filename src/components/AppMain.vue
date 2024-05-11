@@ -19,7 +19,7 @@ export default {
 </script>
 
 <template>
-    <div class="bg-dark">
+    <div class="bg-dark mt-5">
         <section class="movies row">
             <div class="container col g-3 p-5" v-for="film in store.moviesArray"> 
                 <Card :cardObj="film" />
