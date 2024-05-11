@@ -28,16 +28,16 @@ export default {
                             <a class="nav-link" href="#">Serie TV</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-disabled="true">Film</a>
+                            <a class="nav-link" href="#" aria-disabled="true">Film</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-disabled="true">Originali</a>
+                            <a class="nav-link" href="#" aria-disabled="true">Originali</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-disabled="true">Aggiunti di recente</a>
+                            <a class="nav-link" href="#" aria-disabled="true">Aggiunti di recente</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-disabled="true">La mia lista</a>
+                            <a class="nav-link" href="#" aria-disabled="true">La mia lista</a>
                         </li>
                     </ul>
                     <div class="d-flex" role="search">
