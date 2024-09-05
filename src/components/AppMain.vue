@@ -1,12 +1,12 @@
 <script>
 
 import {store} from "../store.js"
+import AppCard from "./AppCard.vue";
 
-import Card from './Card.vue';
 
 export default {
     components:{
-        Card,
+        AppCard,
     },
     data() {
         return {
@@ -22,12 +22,12 @@ export default {
     <div class="bg-dark mt-5">
         <section class="movies row">
             <div class="container col g-3 p-5" v-for="film in store.moviesArray"> 
-                <Card :cardObj="film" />
+                <AppCard :cardObj="film" />
             </div>
         </section>
         <section class="tv-series row">
             <div class="container col g-3 p-5" v-for="tv in store.tvArray">
-                <Card :cardObj ="tv"/>
+                <AppCard :cardObj ="tv"/>
             </div>
         </section>
     </div>
