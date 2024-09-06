@@ -23,12 +23,17 @@ export default {
             return new URL('../assets/img/' + name + '.png', import.meta.url).href; //concatenazione
             // return new URL (`../assets/img/${name}.png`, import.meta.url).href; template literals
         },
+
         getflags() {
             if (this.flagArray.includes(this.cardObj.original_language)) {
                 return true
             } else {
                 return false
             }
+        },
+
+        getimages() {
+            return !!this.cardObj.poster_path;
         },
     }
 };
@@ -38,7 +43,8 @@ export default {
     <div class="flip-card">
         <div class="flip-card-inner">
             <div class="front">
-                <img :src="`https://image.tmdb.org/t/p/w342/${cardObj.poster_path}`" :alt="cardObj.title" />
+                <img v-if="getimages()" :src="`https://image.tmdb.org/t/p/w342/${cardObj.poster_path}`" :alt="cardObj.title" />
+                <img class="not-avaible" v-else src="../assets/img/non-disponibile.jpg" alt="Immagine non disponibile">
             </div>
             <div class="back">
                 <h3 class="mb-3">{{ cardTitle }}</h3>
@@ -98,7 +104,11 @@ export default {
         justify-content: center;
         align-items: center;
         padding: 1rem;
-        box-sizing: border-box;
+
+            .flag {
+                width: 30px;
+                height: 20px;
+            }
     }
 
     .front {
@@ -111,10 +121,13 @@ export default {
         color: white;
         transform: rotateY(180deg); 
     }
+
+    .not-avaible{
+        width: 280px;
+        height: 500px;
+        object-fit: contain;
+    }
 }
 
-.flag {
-    width: 30px;
-    height: 20px;
-}
+
 </style>
